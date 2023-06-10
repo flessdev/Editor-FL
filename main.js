@@ -10,16 +10,16 @@ const $ = s => document.querySelector(s);
 
  editor = ace.edit($editor);
  editor.renderer.setPadding(20)
- editor.getSession().on("change", update);
+ editor.on("input", update);
  
 editor.on("changeSelection", function(){
   setTimeout(() => editor.centerSelection(), 0)
 });
  editor.setOptions({
   showGutter: false,
-  animatedScroll: false,
+  //animatedScroll: false,
   scrollPastEnd: 1,
-  fontSize: "17px",
+  fontSize: "14px",
   //fontFamily: 'Victor',
   dragEnabled: false, //nosirve
   wrap: true, //imposible redline
