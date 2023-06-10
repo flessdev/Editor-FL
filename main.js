@@ -10,7 +10,7 @@ const $ = s => document.querySelector(s);
 
  editor = ace.edit($editor);
  editor.renderer.setPadding(20)
- editor.on("input", update);
+ editor.getSession().on("change", update);
  
 editor.on("changeSelection", function(){
   setTimeout(() => editor.centerSelection(), 0)
